@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+ 
+import { Tasks } from '../api/tasks.js'; 
  
 import Task from './Task.jsx';
  
 // App component - represents the whole app
-export default class App extends Component {
+class App extends Component {
   getTasks() {
     return [
       { _id: 1, text: 'This is task 1' },
@@ -32,3 +35,13 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  tasks: PropTypes.array.isRequired,
+};
+ 
+export default createContainer(() => {
+  return {
+    tasks: Tasks.find({}).fetch(),
+  };
+}, App);
