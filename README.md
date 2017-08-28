@@ -12,5 +12,6 @@ Scaffolding to build Participathon 2017 challenge.
 - Add changes `git add .`
 - Commit changes `git commit -m "Comment about the changes..."`
 - Push your changes `git push origin YOUR_BRANCH_NAME`
+- Log a [Pull Request in GitHub](https://help.github.com/articles/creating-a-pull-request/) .
 ## Get Changes
 - Run `git pull origin master` 
